@@ -1,17 +1,9 @@
-#yourid{
+video{
   background-color: #ddd;
   border-radius: 7px;
   margin: 10px 0px 0px 10px;
   width: 320px;
   height: 240px;
-}
-
-#friend Video{
-  background-color: #ddd;
-  border-radius: 7px;
-  margin: 10px 0px 0px 10px;
-  width: 640px;
-  height: 640px;
 }
 
 button {

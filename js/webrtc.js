@@ -29,8 +29,11 @@ function login(form) {
     return false; //
 }
 
-var servers = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'},
-                                {'urls': 'turn:numb.viagenie.ca', 'credential': 'Tempo12345','username': 'hiddendreamz7@gmail.com'}]};
+var servers = {'iceServers': [
+        {'urls': 'stun:stun.services.mozilla.com'},
+        {'urls': 'stun:stun.l.google.com:19302'},
+        {'urls': 'turn:numb.viagenie.ca', 'credential': 'Tempo12345','username': 'hiddendreamz7@gmail.com'}
+    ]};
 
 function sendMessage(senderId, receiverId, data) {
     var msg = database.push({
@@ -86,4 +89,3 @@ function readMessage(data) {
     }
 }
 database.on('child_added', readMessage);
-// jfdkjfsk

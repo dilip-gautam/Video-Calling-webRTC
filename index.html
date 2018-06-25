@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body onload="showMyFace()">
-	<form id="loginForm" onsubmit="return login(this)">
-		<input type="text" name="username" id="username" placeholder="Enter username"/>
-		<input type="submit" name="login_submit" value="Log In"/>
-		<input type="text" name="callerId" id="callerId" placeholder="Mentor username to call"/>
-	<button onclick="showFriendsFace()" type="button" class="btn btn-primary">
-	<span class= "glyphicon glyphicon-facetime-video" aria-hidden="true"></span>Call
-	</button>
-	</form>
-	<div class='video-container'>
-		<video id="friendsVideo" poster="connecting_icon1.jpg" autoplay playsinline></video>
-		<video id="yourVideo" autoplay muted playsinline></video>
-	</div>
-	<br/>
-	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
-	<script type="text/javascript" src="js/webrtc.js"></script>
-	</body>
+<form id="loginForm" onsubmit="return login(this)">
+	<input type="text" name="username" id="username" placeholder="Enter username"/>
+	<input type="submit" name="login_submit" value="Log In"/>
+</form>
+<video id="yourVideo" autoplay muted playsinline></video>
+<video id="friendsVideo" autoplay playsinline></video>
+<br/>
+<input type="text" name="callerId" id="callerId" placeholder="Enter username to call"/>
+<button onclick="showFriendsFace()" type="button" class="btn btn-primary btn-lg">
+<span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>Call
+</button>
+
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+<script type="text/javascript" src="js/webrtc.js"></script>
+</body>
 </html>

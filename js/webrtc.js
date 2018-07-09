@@ -17,17 +17,17 @@ var callIdField = document.getElementById("callerId");
 let yourId;
 let callId;
 
-// function login(form) {
-//     if(form.username.value === "" || form.username.value === undefined){
-//         alert("Enter valid username");
-//         return false;
-//     }
-// 	yourId = form.username.value;
-//     form.username.value = yourId + "(logged in)";
-//     form.username.disabled = true;
-//     form.login_submit.disabled = true;
-//     return false; //
-// }
+function login(form) {
+    if(form.username.value === "" || form.username.value === undefined){
+        alert("Enter valid username");
+        return false;
+    }
+	yourId = form.username.value;
+    form.username.value = yourId + "(logged in)";
+    form.username.disabled = true;
+    form.login_submit.disabled = true;
+    return false; //
+}
 
 var servers = {'iceServers': [
         {'urls': 'stun:stun.services.mozilla.com'},
@@ -60,7 +60,6 @@ pc.onicecandidate = (event => event.candidate ?
 pc.onaddstream = (event => friendsVideo.srcObject = event.stream);
 
 function showFriendsFace() {
-	yourId = form.username.value;
     callId = callIdField.value;
     pc.createOffer()
         .then(offer => pc.setLocalDescription(offer))

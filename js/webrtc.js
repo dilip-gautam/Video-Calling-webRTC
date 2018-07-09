@@ -56,7 +56,7 @@ var pc = new RTCPeerConnection(servers);
 pc.onicecandidate = (event => event.candidate ?
     sendMessage(yourId, callId, JSON.stringify({
         'ice': event.candidate
-    })): console.log("Sent All Ice"));
+    })): console.log("Sent All Ice"+yourId));
 pc.onaddstream = (event => friendsVideo.srcObject = event.stream);
 
 function showFriendsFace() {

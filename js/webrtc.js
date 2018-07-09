@@ -60,7 +60,7 @@ pc.onicecandidate = (event => event.candidate ?
 pc.onaddstream = (event => friendsVideo.srcObject = event.stream);
 
 function showFriendsFace() {
-	var yourId=document.getElementById('username').value;
+	yourId = form.username.value;
     callId = callIdField.value;
     pc.createOffer()
         .then(offer => pc.setLocalDescription(offer))

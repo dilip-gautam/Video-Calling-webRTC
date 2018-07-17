@@ -14,8 +14,8 @@ var database = firebase.database().ref();
 var yourVideo = document.getElementById("yourVideo");
 var friendsVideo = document.getElementById("friendsVideo");
 var callIdField = document.getElementById("callerId");
-let yourId;
-let callId;
+var yourId;
+var callId;
 
 function login(form) {
     if(form.username.value === "" || form.username.value === undefined){
@@ -30,10 +30,10 @@ function login(form) {
 }
 
 var servers = {'iceServers': [
-        {'urls': 'stun:stun.services.mozilla.com'},
-        {'urls': 'stun:stun.l.google.com:19302'},
-        {'urls': 'turn:numb.viagenie.ca', 'credential': 'Tempo12345','username': 'hiddendreamz7@gmail.com'}
-    ]};
+    {'urls': 'stun:stun.services.mozilla.com'},
+    {'urls': 'stun:stun.l.google.com:19302'},
+    {'urls': 'turn:numb.viagenie.ca', 'credential': 'Tempo12345','username': 'hiddendreamz7@gmail.com'}
+]};
 
 function sendMessage(senderId, receiverId, data) {
     var msg = database.push({
@@ -56,7 +56,7 @@ var pc = new RTCPeerConnection(servers);
 pc.onicecandidate = (event => event.candidate ?
     sendMessage(yourId, callId, JSON.stringify({
         'ice': event.candidate
-    })): console.log("Sent All Ice"+yourId));
+    })): console.log("Sent All Ice"));
 pc.onaddstream = (event => friendsVideo.srcObject = event.stream);
 
 function showFriendsFace() {
